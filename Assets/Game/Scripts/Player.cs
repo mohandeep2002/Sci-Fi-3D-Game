@@ -77,7 +77,8 @@ public class Player : MonoBehaviour
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
         Vector3 velocity = direction * _speed;
         velocity.y = velocity.y - _gravity;
-        velocity = transform.TransformDirection(velocity); 
+        // velocity = transform.TransformDirection(velocity);
+        velocity = transform.transform.TransformDirection(velocity);
         _cc.Move(velocity * Time.deltaTime);
     }
     void Shoot()
